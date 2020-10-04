@@ -2,14 +2,17 @@ package me.ekmst.hellospring.service;
 
 import me.ekmst.hellospring.domain.Member;
 import me.ekmst.hellospring.repository.MemberRepository;
-import me.ekmst.hellospring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /**
      * 회원 가입
