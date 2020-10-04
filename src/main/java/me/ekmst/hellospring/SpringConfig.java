@@ -1,6 +1,7 @@
 package me.ekmst.hellospring;
 
 import me.ekmst.hellospring.repository.JdbcMemberRepository;
+import me.ekmst.hellospring.repository.JdbcTemplateMemberRepository;
 import me.ekmst.hellospring.repository.MemberRepository;
 import me.ekmst.hellospring.repository.MemoryMemberRepository;
 import me.ekmst.hellospring.service.MemberService;
@@ -28,7 +29,8 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 
 }
